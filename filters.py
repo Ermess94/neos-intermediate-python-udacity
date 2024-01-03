@@ -170,6 +170,8 @@ def limit(iterator, n=None):
 
 
 class DateFilter(AttributeFilter):
+    """Filter for close approaches based on date."""
+
     @classmethod
     def get(cls, approach):
         """Get the date of the close approach.
@@ -181,6 +183,8 @@ class DateFilter(AttributeFilter):
 
 
 class DistanceFilter(AttributeFilter):
+    """Filter for close approaches based on nominal approach distance."""
+
     @classmethod
     def get(cls, approach):
         """Get the nominal approach distance.
@@ -192,6 +196,8 @@ class DistanceFilter(AttributeFilter):
 
 
 class VelocityFilter(AttributeFilter):
+    """Filter for close approaches based on relative approach velocity."""
+
     @classmethod
     def get(cls, approach):
         """Get the relative approach velocity.
@@ -203,6 +209,8 @@ class VelocityFilter(AttributeFilter):
 
 
 class DiameterFilter(AttributeFilter):
+    """Filter for close approaches based on NEO diameter."""
+
     @classmethod
     def get(cls, approach):
         """Get the diameter of the NEO.
@@ -214,6 +222,8 @@ class DiameterFilter(AttributeFilter):
 
 
 class HazardousFilter(AttributeFilter):
+    """Filter for close approaches based on hazardous NEOs."""
+
     @classmethod
     def get(cls, approach):
         """Check if the NEO of the approach is hazardous.
