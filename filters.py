@@ -162,7 +162,7 @@ def limit(iterator, n=None):
     :param n: The maximum number of values to produce.
     :yield: The first (at most) `n` values from the iterator.
     """
-    
+
     if n is None or n <= 0:
         yield from iterator
     else:
@@ -172,28 +172,53 @@ def limit(iterator, n=None):
 class DateFilter(AttributeFilter):
     @classmethod
     def get(cls, approach):
+        """Get the date of the close approach.
+
+        :param approach: A `CloseApproach` object.
+        :return: The date of the close approach.
+        """
         return approach.time.date()
 
 
 class DistanceFilter(AttributeFilter):
     @classmethod
     def get(cls, approach):
+        """Get the nominal approach distance.
+
+        :param approach: A `CloseApproach` object.
+        :return: The nominal approach distance.
+        """
         return approach.distance
 
 
 class VelocityFilter(AttributeFilter):
     @classmethod
     def get(cls, approach):
+        """Get the relative approach velocity.
+
+        :param approach: A `CloseApproach` object.
+        :return: The relative approach velocity.
+        """
         return approach.velocity
 
 
 class DiameterFilter(AttributeFilter):
     @classmethod
     def get(cls, approach):
+        """Get the diameter of the NEO.
+
+        :param approach: A `CloseApproach` object.
+        :return: The diameter of the NEO.
+        """
         return approach.neo.diameter
 
 
 class HazardousFilter(AttributeFilter):
     @classmethod
     def get(cls, approach):
+        """Check if the NEO of the approach is hazardous.
+
+        :param approach: A `CloseApproach` object.
+        :return: True if the NEO is hazardous, False otherwise.
+        """
         return approach.neo.hazardous
