@@ -34,8 +34,7 @@ class NearEarthObject:
     """
 
     def __init__(self, designation: str, name: str, diameter: float, hazardous: bool):
-        """Create a new `NearEarthObject`.
-        """
+        """Create a new `NearEarthObject`."""
         self.designation: str = designation if designation is not None else ''
         self.name: str = name if name is not None else None
         self.diameter: float = float(
@@ -74,8 +73,7 @@ class CloseApproach:
     """
 
     def __init__(self, designation: str, time: str, distance: float, velocity: float):
-        """Create a new `CloseApproach`.
-        """
+        """Create a new `CloseApproach`."""
         self._designation = designation
 
         # try to parse time string argument to datetime

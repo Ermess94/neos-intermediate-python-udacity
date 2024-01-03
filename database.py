@@ -43,7 +43,6 @@ class NEODatabase:
         :param neos: A collection of `NearEarthObject`s.
         :param approaches: A collection of `CloseApproach`es.
         """
-
         self.__neos_by_designation = {}
         self.__neos_by_name = {}
 

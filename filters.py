@@ -71,6 +71,10 @@ class AttributeFilter:
         raise UnsupportedCriterionError
 
     def __repr__(self):
+        """Return a string representation of the AttributeFilter object.
+
+        :return: A string representation of the AttributeFilter object.
+        """
         return f"{self.__class__.__name__}(op=operator.{self.op.__name__}, value={self.value})"
 
 
@@ -110,7 +114,6 @@ def create_filters(
     :param hazardous: Whether the NEO of a matching `CloseApproach` is potentially hazardous.
     :return: A collection of filters for use with `query`.
     """
-
     filters = []
 
     if date is not None:
@@ -162,7 +165,6 @@ def limit(iterator, n=None):
     :param n: The maximum number of values to produce.
     :yield: The first (at most) `n` values from the iterator.
     """
-
     if n is None or n <= 0:
         yield from iterator
     else:
